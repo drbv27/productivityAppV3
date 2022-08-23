@@ -2,12 +2,13 @@ import { useState } from 'react'
 import {ThemeProvider} from './context/ThemeContext'
 
 import './App.css'
+import Navbar from './components/Navbar'
 
 function App() {
 
   return (
     <ThemeProvider>
-      <h1>Hello World !!!</h1>
+      <Navbar/>
     </ThemeProvider>
   )
 }
