@@ -1,13 +1,14 @@
 import { useState } from 'react'
+import {ThemeProvider} from './context/ThemeContext'
 
 import './App.css'
 
 function App() {
 
   return (
-    <div class="text-3xl font-bold underline">
+    <ThemeProvider>
       <h1>Hello World !!!</h1>
-    </div>
+    </ThemeProvider>
   )
 }
 
