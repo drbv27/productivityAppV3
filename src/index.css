@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  @apply bg-primary text-primary
+}
+
+.rounded-div {
+  @apply border border-secondary rounded-2xl shadow-xl bg-primary px-2 max-w-[1140px] w-full mx-auto
+}
+
+.dark {
+  --color-bg-primary: #575756;
+  --color-bg-secondary: #b2b2b2;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #dadada;
+  --color-text-accent: #81e6d9;
+  --color-bg-input: #4a5361;
+  --color-bg-button: #81e6d9;
+  --color-cp-primary: #1097d5;
+  --color-cp-secondary: #98bf11;
+  --color-app-blue: #007bbd;
+  --color-app-green: #00975c;
+  --color-app-orange: #f59c10;
+  --color-app-red: #e94947;
+  --color-app-turquoise: #00a4b5;
+
+}
+
+.light {
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #dadada;
+  --color-text-primary: #191731;
+  --color-text-secondary: #575756;
+  --color-text-accent: #2b6cb0;
+  --color-bg-input: #edf2f7;
+  --color-bg-button: #2b6cb0;
+  --color-cp-primary: #1097d5;
+  --color-cp-secondary: #98bf11;
+  --color-app-blue: #007bbd;
+  --color-app-green: #00975c;
+  --color-app-orange: #f59c10;
+  --color-app-red: #e94947;
+  --color-app-turquoise: #00a4b5;
+}
