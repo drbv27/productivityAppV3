@@ -7,6 +7,7 @@ module.exports = {
       backgroundColor: {
         primary: 'var(--color-bg-primary)',
         secondary: 'var(--color-bg-secondary)',
+        third: 'var(--color-bg-third)',
         button: 'var(--color-bg-button)',
         cpPrimary:'var(--color-cp-primary)',
       },

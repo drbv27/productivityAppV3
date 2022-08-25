@@ -16,6 +16,7 @@ function App() {
   return (
     <ThemeProvider>
       <Navbar/>
+      
       <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/signin' element={<SignIn />} />
@@ -23,6 +24,8 @@ function App() {
           <Route path='/account' element={<Account />} />
           <Route path='/dash' element={<Dashboard />} />
         </Routes>
+      
+
       <Footer/>
     </ThemeProvider>
   )
