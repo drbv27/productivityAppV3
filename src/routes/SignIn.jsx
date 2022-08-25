@@ -19,7 +19,7 @@ const SignIn = () => {
             </div>
           </div>
           <div className='my-4'>
-            <label>Password</label>
+            <label>Contraseña</label>
             <div className='my-2 w-full relative rounded-2xl shadow-xl'>
               <input
                 className='w-full p-2 bg-primary border border-input rounded-2xl'
@@ -29,13 +29,13 @@ const SignIn = () => {
             </div>
           </div>
           <button className='w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl'>
-            Sign in
+            Ingresar
           </button>
         </form>
         <p className='my-4'>
-          Don't have an account?{' '}
+          No tienes cuenta?{' '}
           <Link to='/signup' className='text-accent'>
-            Sign up
+            Registrar
           </Link>
         </p>
       </div>
