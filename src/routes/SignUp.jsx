@@ -10,12 +10,14 @@ const SignUp = () => {
     const [error,setError] = useState('')
 
     const {createUser} = UserAuth()
+    const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
         try {
             await createUser(email,password)
+            navigate('/account')
         } catch (e) {
             setError(e.message)
             console.log(e.message);
