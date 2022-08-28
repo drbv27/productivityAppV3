@@ -11,20 +11,30 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import { AuthContextProvider } from './context/AuthContext';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
 
   return (
     <ThemeProvider>
       <AuthContextProvider>
-      <Navbar/>
-      <Routes>
+        <Navbar/>
+        <Routes>
           <Route path='/' element={<SignIn />} />
           <Route path='/signup' element={<SignUp />} />
-          <Route path='/account' element={<Account />} />
-          <Route path='/dash' element={<Dashboard />} />
+          <Route path='/account' element={
+            <ProtectedRoute>
+              <Account />
+            </ProtectedRoute>
+          } />
+
+          <Route path='/dash' element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          } />
         </Routes>
-      <Footer/>
+        <Footer/>
       </AuthContextProvider>
 
       

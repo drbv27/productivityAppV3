@@ -1,8 +1,46 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { UserAuth } from '../context/AuthContext'
+import AddActivitie from '../components/AddActivitie'
+import ActivitiesList from '../components/ActivitiesList'
 
 const Account = () => {
+
+  const fakeData = [
+    {
+      id:1,
+      dateMade:"28-08-2022",
+      activitieStarted:"8:00",
+      activitieFinished:"9:00",
+      Macroprocess:"Gerencia",
+      Process:"Gobierno",
+      Subprocess:"Asamblea General",
+      description:"Acompañar asamblea",
+      activitieDuration:"1"
+    },
+    {
+      id:2,
+      dateMade:"28-08-2022",
+      activitieStarted:"9:00",
+      activitieFinished:"10:00",
+      Macroprocess:"Ingeniería",
+      Process:"Investigacion aplicada y desarrollo",
+      Subprocess:"Desarrollo de Software",
+      description:"Estados software productividad",
+      activitieDuration:"1"
+    },
+    {
+      id:3,
+      dateMade:"28-08-2022",
+      activitieStarted:"10:00",
+      activitieFinished:"11:30",
+      Macroprocess:"Gerencia",
+      Process:"Gobierno",
+      Subprocess:"Asamblea General",
+      description:"Acompañar asamblea",
+      activitieDuration:"1.5"
+    },
+  ]
 
   const{user,logout} = UserAuth()
   const navigate = useNavigate()
@@ -35,9 +73,14 @@ const Account = () => {
             </button>
           </div>
         </div>
+        {/* Form activiteies */}
         <div className='flex justfiy-between items-center my-12 py-8 rounded-div'>
           <div className='w-full min-h-[300px]'>
-            <h1 className='text-2xl font-bold py-4'>Watch List</h1>
+            <h1 className='text-2xl font-bold py-4'>Iniciar Actividad</h1>
+            <hr/>
+            <AddActivitie/>
+            <hr/>
+            <ActivitiesList activitiesArray={fakeData}/>
             
           </div>
         </div>

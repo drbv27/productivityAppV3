@@ -8,6 +8,8 @@ module.exports = {
         primary: 'var(--color-bg-primary)',
         secondary: 'var(--color-bg-secondary)',
         third: 'var(--color-bg-third)',
+        redP:'var(--color-bg-redP)',
+        yellowP:'var(--color-bg-yellowP)',
         button: 'var(--color-bg-button)',
         cpPrimary:'var(--color-cp-primary)',
       },
