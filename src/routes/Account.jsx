@@ -107,7 +107,13 @@ const Account = () => {
             <AddActivitie/>
             <hr/>
             {/* {user=== {} ? <ActivitiesList activitiesArray={tasksArray}/> : <ActivitiesList activitiesArray={fakeData}/>} */}
-            {tasksArray && <ActivitiesList activitiesArray={tasksArray}/>} 
+            {tasksArray && 
+              <ActivitiesList 
+                activitiesArray={tasksArray}
+                setTasksArray={setTasksArray}
+                userEmail={userEmail}
+              />
+            } 
             
             
           </div>

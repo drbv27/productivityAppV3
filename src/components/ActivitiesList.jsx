@@ -1,7 +1,24 @@
 import React from 'react'
 import {BiEditAlt,BiTrash} from 'react-icons/bi'
+import app from '../firebase';
+import { getFirestore,updateDoc,doc } from 'firebase/firestore';
 
-const ActivitiesList = ({activitiesArray}) => {
+const firestore = getFirestore(app)
+
+const ActivitiesList = ({activitiesArray,userEmail,setTasksArray}) => {
+
+    async function deleteActivitie(activitieId){
+        //create new activities array
+        const newActivitiesArray = activitiesArray.filter(
+            (activitieObject) => activitieObject.id !== activitieId
+        );
+        //update DB
+        const docuRef = doc(firestore,`usersActivities/${userEmail}`);
+        updateDoc(docuRef,{activities:[...newActivitiesArray]});
+        //update state
+        setTasksArray(newActivitiesArray);
+    }
+
   return (
     <div>
         <h2 className='text-xl font-bold text-center'>Listado actividades</h2>
@@ -45,7 +62,8 @@ const ActivitiesList = ({activitiesArray}) => {
                             border 
                             rounded-xl 
                             bg-redP 
-                            shadow-xl'>
+                            shadow-xl'
+                            onClick={()=>deleteActivitie(activitieObject.id)}>
                                 <BiTrash/>
                         </button>
                     </div>
