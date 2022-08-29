@@ -1,11 +1,13 @@
-import React from 'react'
+import {useEffect,useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import { UserAuth } from '../context/AuthContext'
 import AddActivitie from '../components/AddActivitie'
 import ActivitiesList from '../components/ActivitiesList'
+import useDataUser from '../hooks/useDataUser'
 
 const Account = () => {
 
+  const [userData,setUserData] = useState([]);
   const fakeData = [
     {
       id:1,
@@ -42,7 +44,31 @@ const Account = () => {
     },
   ]
 
-  const{user,logout} = UserAuth()
+  const {user,logout} = UserAuth()
+  /* console.log("usuario",user) */
+
+  let newUser;
+  useEffect(()=>{
+    new Promise((resolve,reject)=>{
+        if(user){
+            resolve(
+              newUser = user
+            )
+        }else{
+            reject("no se pudo dash")
+        }
+    }).then((response)=>{
+
+      setUserData(response)
+      
+      
+    })
+  },[user])
+
+
+
+  const {tasksArray,userEmail,setTasksArray} =useDataUser(userData)
+  /* console.log(tasksArray); */
   const navigate = useNavigate()
 
   const handleLogout = async () => {
@@ -80,7 +106,9 @@ const Account = () => {
             <hr/>
             <AddActivitie/>
             <hr/>
-            <ActivitiesList activitiesArray={fakeData}/>
+            {/* {user=== {} ? <ActivitiesList activitiesArray={tasksArray}/> : <ActivitiesList activitiesArray={fakeData}/>} */}
+            {tasksArray && <ActivitiesList activitiesArray={tasksArray}/>} 
+            
             
           </div>
         </div>
