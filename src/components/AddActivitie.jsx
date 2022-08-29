@@ -2,6 +2,7 @@ import React from 'react'
 import { UserAuth } from '../context/AuthContext';
 import {BiPlayCircle,BiStopCircle,BiUpload,BiSearchAlt,BiPencil} from 'react-icons/bi'
 import activitiesAndProcess from '../data/activitiesAndProcess';
+import Edi from "../assets/img/EDI_RELAJADO.png"
 
 const AddActivitie = () => {
   const {user} = UserAuth()
@@ -9,7 +10,7 @@ const AddActivitie = () => {
   console.log(activitiesAndProcess)
   return (
     <fieldset className='bg-secondary py-5 px-2 rounded-2xl'>
-      <legend className='text-2xl'>Actividad</legend>
+      <legend className='text-3xl flex'>Actividad  <img src={Edi} alt="" className='ml-2 w-16'/></legend>
       <form className='flex justify-between gap-5'>
         <div className='flex-grow'>
 

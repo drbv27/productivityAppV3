@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import {Link} from 'react-router-dom'
 import ThemeToggle from './ThemeToggle'
 import {AiOutlineClose, AiOutlineMenu} from 'react-icons/ai'
+import PygmaLogo from "../assets/img/Logo-Pygmalion.png"
 
 const Navbar = () => {
     const [nav,setNav] = useState(false)
@@ -13,7 +14,10 @@ const Navbar = () => {
   return (
     <div className='rounded-div flex items-center justify-between h-20 font-bold bg-appblue'>
         <Link to="/">
-            <h1 className='text-2xl'>ProductivityApp</h1>
+            <div>
+            <h1 className='text-3xl'>ProductivityApp</h1>
+            <div className='flex ml-24 mt-2'><p>By: </p><img src={PygmaLogo} alt="" className='w-24 ml-2'/></div>
+            </div>
         </Link>
         <div className='hidden md:block'>
             <ThemeToggle />
