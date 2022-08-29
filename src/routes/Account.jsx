@@ -102,10 +102,13 @@ const Account = () => {
         {/* Form activiteies */}
         <div className='flex justfiy-between items-center my-12 py-8 rounded-div'>
           <div className='w-full min-h-[300px]'>
-            <h1 className='text-2xl font-bold py-4'>Iniciar Actividad</h1>
+            <h1 className='text-2xl font-bold py-4 text-center'>Registro de Actividades</h1>
             <hr/>
             <AddActivitie/>
-            <hr/>
+            <br />
+            <hr />
+          
+            {/* <hr/> */}
             {/* {user=== {} ? <ActivitiesList activitiesArray={tasksArray}/> : <ActivitiesList activitiesArray={fakeData}/>} */}
             {tasksArray && 
               <ActivitiesList 

@@ -9,21 +9,19 @@ const Footer = () => {
           <div className='grid md:grid-cols-2'>
             <div className='flex justify-evenly w-full md:max-w-[300px] uppercase'>
               <div>
-                <h2 className='font-bold'>Support</h2>
+                <h2 className='font-bold'>SOPORTE</h2>
                 <ul>
-                  <li className='text-sm py-2'>Help Center</li>
-                  <li className='text-sm py-2'>Contact Us</li>
-                  <li className='text-sm py-2'>API Status</li>
-                  <li className='text-sm py-2'>Documentation</li>
+                  <li className='text-sm py-2'>Centro de ayuda</li>
+                  <li className='text-sm py-2'>Contactenos</li>
+                  <li className='text-sm py-2'>Documentación</li>
                 </ul>
               </div>
               <div>
-                <h2 className='font-bold'>Info</h2>
+                <h2 className='font-bold'>INFORMACIÓN</h2>
                 <ul>
-                  <li className='text-sm py-2'>About Us</li>
-                  <li className='text-sm py-2'>Careers</li>
-                  <li className='text-sm py-2'>Invest</li>
-                  <li className='text-sm py-2'>Legal</li>
+                  <li className='text-sm py-2'>Quienes somos</li>
+                  <li className='text-sm py-2'>Trabaja con Nosotros</li>
+                  <li className='text-sm py-2'>Tratamiento de datos</li>
                 </ul>
               </div>
             </div>

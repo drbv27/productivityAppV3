@@ -21,7 +21,7 @@ const ActivitiesList = ({activitiesArray,userEmail,setTasksArray}) => {
 
   return (
     <div>
-        <h2 className='text-xl font-bold text-center'>Listado actividades</h2>
+        <h2 className='text-xl font-bold text-center mt-5'>Actividades del día</h2>
         {activitiesArray.map((activitieObject) =>{
             return(
                 <div className='flex justify-between border px-6 py-2 mt-4 rounded-2xl shadow-lg hover:shadow-2xl' key={activitieObject.id}>
