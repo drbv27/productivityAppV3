@@ -7,6 +7,23 @@ const firestore = getFirestore(app)
 
 const ActivitiesList = ({activitiesArray,userEmail,setTasksArray}) => {
 
+    let filteredArrayToday = []
+    const today = new Date()
+    let month = ""
+    let day = "";
+    {today.getMonth()+1>=9 ? month=today.getMonth()+1 : month=`0${today.getMonth()+1}`};
+    {today.getDate()>=9 ? day=today.getDate() : day=`0${today.getDate()}`};
+    const formatedToday = `${day}-${month}-${today.getFullYear()}`
+  
+    filteredArrayToday = activitiesArray.filter((data)=>{
+      return(
+        /* dat.fecha>="2022-06-22" && dat.fecha<="2022-06-23" */
+        data.dateMade===formatedToday
+      )
+    })
+    console.log(formatedToday);
+    console.log(filteredArrayToday);
+
     async function deleteActivitie(activitieId){
         //create new activities array
         const newActivitiesArray = activitiesArray.filter(
@@ -22,7 +39,7 @@ const ActivitiesList = ({activitiesArray,userEmail,setTasksArray}) => {
   return (
     <div>
         <h2 className='text-xl font-bold text-center mt-5'>Actividades del día</h2>
-        {activitiesArray.map((activitieObject) =>{
+        {filteredArrayToday.map((activitieObject) =>{
             return(
                 <div className='flex justify-between border px-6 py-2 mt-4 rounded-2xl shadow-lg hover:shadow-2xl' key={activitieObject.id}>
                     <div>

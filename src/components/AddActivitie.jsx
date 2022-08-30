@@ -37,7 +37,7 @@ const AddActivitie = ({activitiesArray,userEmail,setTasksArray}) => {
     let startMinute = startActivitie.getMinutes();
     startMinute <= 9 ? (startMinute = `0${startMinute}`) : (startMinute = startMinute);
     setStartActivitie(`${startHour}:${startMinute}`);
-    console.log(`${startHour}:${startMinute}`);
+    /* console.log(`${startHour}:${startMinute}`); */
   };
   const captureTimeActivitieFinish = () => {
     const finishActivitie = new Date();
@@ -45,7 +45,7 @@ const AddActivitie = ({activitiesArray,userEmail,setTasksArray}) => {
     let finishMinute = finishActivitie.getMinutes();
     finishMinute <= 9 ? (finishMinute = `0${finishMinute}`) : (finishMinute = finishMinute);
     setFinishActivitie(`${finishHour}:${finishMinute}`);
-    console.log(`${finishHour}:${finishMinute}`);
+   /*  console.log(`${finishHour}:${finishMinute}`); */
   };
 
 async function addActivities(e){
