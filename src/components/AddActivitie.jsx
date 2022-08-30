@@ -4,7 +4,12 @@ import {BiPlayCircle,BiStopCircle,BiUpload,BiSearchAlt,BiPencil} from 'react-ico
 import activitiesAndProcess from '../data/activitiesAndProcess';
 import Edi from "../assets/img/EDI_RELAJADO.png"
 
-const AddActivitie = () => {
+import app from '../firebase';
+import { getFirestore,updateDoc,doc } from 'firebase/firestore';
+
+const firestore = getFirestore(app)
+
+const AddActivitie = ({activitiesArray,userEmail,setTasksArray}) => {
   /* const [subprocess,setSubprocess] = useState(""); */
   /* const [process,setProcess] = useState(""); */
   const [activitieR,setActivitieR] = useState("");
@@ -64,8 +69,18 @@ async function addActivities(e){
           description: activitieRegistered,
           activitieDuration: activitieDuration,
         }
-    
-  console.log(newActivitie);
+  const newActivitiesArray = [
+    ...activitiesArray,newActivitie,
+  ];
+  //actualizar DB
+  const docuRef = doc(firestore, `usersActivities/${userEmail}`);
+      updateDoc(docuRef,{activities:[...newActivitiesArray]})
+      //actualizar state
+      setTasksArray(newActivitiesArray);
+      //Limpiar formulario
+      e.target.formSubprocess.value = "";
+      e.target.formActivitieRegistered.value = "";
+
 }
   
   return (

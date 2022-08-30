@@ -104,7 +104,11 @@ const Account = () => {
           <div className='w-full min-h-[300px]'>
             <h1 className='text-2xl font-bold py-4 text-center'>Registro de Actividades</h1>
             <hr/>
-            <AddActivitie/>
+            <AddActivitie
+              activitiesArray={tasksArray}
+              setTasksArray={setTasksArray}
+              userEmail={userEmail}
+            />
             <br />
             <hr />
           
