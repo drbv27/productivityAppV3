@@ -144,10 +144,10 @@ async function addActivities(e){
                             text-2xl' disabled={disableButton2}>
                               <BiStopCircle className='ml-auto mr-auto'/>
             </button>
-            <div className="numbers">
+            <div className="text-lg text-center font-bold mt-5">
               <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
-              <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}:</span>
-              <span>{("0" + ((time / 10) % 100)).slice(-2)}</span>
+              <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}</span>
+              {/* <span>{("0" + ((time / 10) % 100)).slice(-2)}</span> */}
             </div>
         </div>
         <form className='flex flex-col flex-grow gap-5' onSubmit={addActivities}>
