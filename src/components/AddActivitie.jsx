@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { UserAuth } from '../context/AuthContext';
 import {BiPlayCircle,BiStopCircle,BiUpload,BiSearchAlt,BiPencil} from 'react-icons/bi'
 import activitiesAndProcess from '../data/activitiesAndProcess';
@@ -6,6 +6,7 @@ import Edi from "../assets/img/EDI_RELAJADO.png"
 
 import app from '../firebase';
 import { getFirestore,updateDoc,doc } from 'firebase/firestore';
+
 
 const firestore = getFirestore(app)
 
@@ -18,6 +19,8 @@ const AddActivitie = ({activitiesArray,userEmail,setTasksArray}) => {
   const [disableButton,setDisableButton] = useState(false)
   const [disableButton2,setDisableButton2] = useState(true)
   const [disableSend,setDisableSend] = useState(true)
+  const [time, setTime] = useState(0);
+  const [running, setRunning] = useState(false);
   const {user} = UserAuth()
   /* console.log(user.email) */
   /* console.log(activitiesAndProcess) */
@@ -42,6 +45,7 @@ const AddActivitie = ({activitiesArray,userEmail,setTasksArray}) => {
     setStartActivitie(`${startHour}:${startMinute}`);
     setDisableButton(!disableButton)
     setDisableButton2(!disableButton2)
+    setRunning(true)
     /* console.log(`${startHour}:${startMinute}`); */
   };
   const captureTimeActivitieFinish = () => {
@@ -52,6 +56,7 @@ const AddActivitie = ({activitiesArray,userEmail,setTasksArray}) => {
     setFinishActivitie(`${finishHour}:${finishMinute}`);
     setDisableButton2(!disableButton2)
     setDisableSend(!disableSend)
+    setRunning(false)
 
     
    /*  console.log(`${finishHour}:${finishMinute}`); */
@@ -91,8 +96,21 @@ async function addActivities(e){
       e.target.formActivitieRegistered.value = "";
       setDisableSend(!disableSend);
       setDisableButton(!disableButton);
-
+      setTime(0)
 }
+
+
+  useEffect(() => {
+    let interval;
+    if (running) {
+      interval = setInterval(() => {
+        setTime((prevTime) => prevTime + 10);
+      }, 10);
+    } else if (!running) {
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval);
+  }, [running]);
   
   return (
     <fieldset className='bg-secondary py-5 px-2 rounded-2xl'>
@@ -126,6 +144,11 @@ async function addActivities(e){
                             text-2xl' disabled={disableButton2}>
                               <BiStopCircle className='ml-auto mr-auto'/>
             </button>
+            <div className="numbers">
+              <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
+              <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}:</span>
+              <span>{("0" + ((time / 10) % 100)).slice(-2)}</span>
+            </div>
         </div>
         <form className='flex flex-col flex-grow gap-5' onSubmit={addActivities}>
           <div className='flex-grow'>
