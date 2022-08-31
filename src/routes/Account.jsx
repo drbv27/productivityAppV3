@@ -1,4 +1,5 @@
 import {useEffect,useState} from 'react'
+import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom'
 import { UserAuth } from '../context/AuthContext'
 import AddActivitie from '../components/AddActivitie'
@@ -8,7 +9,7 @@ import useDataUser from '../hooks/useDataUser'
 const Account = () => {
 
   const [userData,setUserData] = useState([]);
-  const fakeData = [
+/*   const fakeData = [
     {
       id:1,
       dateMade:"28-08-2022",
@@ -42,7 +43,7 @@ const Account = () => {
       description:"Acompañar asamblea",
       activitieDuration:"1.5"
     },
-  ]
+  ] */
 
   const {user,logout} = UserAuth()
   /* console.log("usuario",user) */
@@ -89,6 +90,10 @@ const Account = () => {
             <div>
               <p>Welcome: {user && user.email}</p>
             </div>
+          </div>
+          <div>
+            <Link to='/account'>Registro</Link>
+            <Link to='/dash'>Dashboard</Link>
           </div>
           <div>
             <button

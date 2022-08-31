@@ -21,8 +21,8 @@ const ActivitiesList = ({activitiesArray,userEmail,setTasksArray}) => {
         data.dateMade===formatedToday
       )
     })
-    console.log(formatedToday);
-    console.log(filteredArrayToday);
+/*     console.log(formatedToday);
+    console.log(filteredArrayToday); */
 
     async function deleteActivitie(activitieId){
         //create new activities array

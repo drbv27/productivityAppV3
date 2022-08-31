@@ -15,6 +15,9 @@ const AddActivitie = ({activitiesArray,userEmail,setTasksArray}) => {
   const [activitieR,setActivitieR] = useState("");
   const [startActivitie,setStartActivitie] = useState("");
   const [finishActivitie,setFinishActivitie] = useState("");
+  const [disableButton,setDisableButton] = useState(false)
+  const [disableButton2,setDisableButton2] = useState(true)
+  const [disableSend,setDisableSend] = useState(true)
   const {user} = UserAuth()
   /* console.log(user.email) */
   /* console.log(activitiesAndProcess) */
@@ -37,6 +40,8 @@ const AddActivitie = ({activitiesArray,userEmail,setTasksArray}) => {
     let startMinute = startActivitie.getMinutes();
     startMinute <= 9 ? (startMinute = `0${startMinute}`) : (startMinute = startMinute);
     setStartActivitie(`${startHour}:${startMinute}`);
+    setDisableButton(!disableButton)
+    setDisableButton2(!disableButton2)
     /* console.log(`${startHour}:${startMinute}`); */
   };
   const captureTimeActivitieFinish = () => {
@@ -45,6 +50,10 @@ const AddActivitie = ({activitiesArray,userEmail,setTasksArray}) => {
     let finishMinute = finishActivitie.getMinutes();
     finishMinute <= 9 ? (finishMinute = `0${finishMinute}`) : (finishMinute = finishMinute);
     setFinishActivitie(`${finishHour}:${finishMinute}`);
+    setDisableButton2(!disableButton2)
+    setDisableSend(!disableSend)
+
+    
    /*  console.log(`${finishHour}:${finishMinute}`); */
   };
 
@@ -80,6 +89,8 @@ async function addActivities(e){
       //Limpiar formulario
       e.target.formSubprocess.value = "";
       e.target.formActivitieRegistered.value = "";
+      setDisableSend(!disableSend);
+      setDisableButton(!disableButton);
 
 }
   
@@ -101,7 +112,7 @@ async function addActivities(e){
                             border 
                             rounded-2xl 
                             bg-third 
-                            shadow-xl'>
+                            shadow-xl'disabled={disableButton}>
                               <BiPlayCircle className='ml-auto mr-auto'/>
             </button>
             <button onClick={captureTimeActivitieFinish} 
@@ -112,7 +123,7 @@ async function addActivities(e){
                             text-btnText 
                             rounded-2xl 
                             shadow-xl 
-                            text-2xl '>
+                            text-2xl' disabled={disableButton2}>
                               <BiStopCircle className='ml-auto mr-auto'/>
             </button>
         </div>
@@ -144,7 +155,7 @@ async function addActivities(e){
           </div>
         </div>
  
-          <button className='w-full p-1 bg-button text-btnText rounded-2xl shadow-xl text-2xl '><BiUpload className='ml-auto mr-auto'/></button>
+          <button className='w-full p-1 bg-button text-btnText rounded-2xl shadow-xl text-2xl' disabled={disableSend}><BiUpload className='ml-auto mr-auto'/></button>
       </form>
       </div>
     </fieldset>
