@@ -11,8 +11,8 @@ const ActivitiesList = ({activitiesArray,userEmail,setTasksArray}) => {
     const today = new Date()
     let month = ""
     let day = "";
-    {today.getMonth()+1>=9 ? month=today.getMonth()+1 : month=`0${today.getMonth()+1}`};
-    {today.getDate()>=9 ? day=today.getDate() : day=`0${today.getDate()}`};
+    {today.getMonth()+1>9 ? month=today.getMonth()+1 : month=`0${today.getMonth()+1}`};
+    {today.getDate()>9 ? day=today.getDate() : day=`0${today.getDate()}`};
     const formatedToday = `${day}-${month}-${today.getFullYear()}`
   
     filteredArrayToday = activitiesArray.filter((data)=>{
@@ -21,8 +21,8 @@ const ActivitiesList = ({activitiesArray,userEmail,setTasksArray}) => {
         data.dateMade===formatedToday
       )
     })
-/*     console.log(formatedToday);
-    console.log(filteredArrayToday); */
+    console.log(formatedToday);
+    console.log(filteredArrayToday);
 
     async function deleteActivitie(activitieId){
         //create new activities array
