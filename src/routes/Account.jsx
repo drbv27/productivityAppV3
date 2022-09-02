@@ -34,7 +34,7 @@ const Account = () => {
 
 
   const {tasksArray,userEmail,setTasksArray} =useDataUser(userData)
-  console.log("desde account",tasksArray);
+ /*  console.log("desde account",tasksArray); */
   const navigate = useNavigate()
 
   const handleLogout = async () => {

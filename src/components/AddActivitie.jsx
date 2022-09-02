@@ -31,7 +31,8 @@ const AddActivitie = ({activitiesArray,userEmail,setTasksArray}) => {
     let month = dateCapture.getMonth() + 1;
     month <= 9 ? (month = `0${month}`) : (month = month);
     const year = dateCapture.getFullYear();
-    const dateToShow = `${day}-${month}-${year}`;
+    /* const dateToShow = `${day}-${month}-${year}`; */
+    const dateToShow = `${year}-${month}-${day}`;
     /* console.log(fechar)
     console.log(`${anio}-${mes}-${dia}`) */
     return dateToShow;
@@ -67,7 +68,9 @@ async function addActivities(e){
   const subprocess = e.target.formSubprocess.value;
   const activitieRegistered = e.target.formActivitieRegistered.value;
   const process = activitiesAndProcess.filter((subprocessInner)=> subprocessInner.subproceso.includes(subprocess))[0].proceso;
+
   const macroprocess = activitiesAndProcess.filter((subprocessInner)=> subprocessInner.subproceso.includes(subprocess))[0].macroproceso;
+
   const activitieDuration = finishActivitie.split(":").reduce((p,c)=> parseInt(p) * 60 + parseInt(c)) - 
                             startActivitie.split(":").reduce((p,c)=> parseInt(p) * 60 + parseInt(c))
   //CREAR NUEVO ARRAY DE TAREAS

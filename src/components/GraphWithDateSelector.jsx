@@ -9,19 +9,22 @@ const GraphWithDateSelector = ({tasksArray}) => {
 
   async function activitiesFilter(e){
     e.preventDefault();
-    const originalInitialFilter = e.target.initialDate.value.split("-");
-    const originalFinalFilter = e.target.finalDate.value.split("-");
-    const initialFilter = `${originalInitialFilter[2]}-${originalInitialFilter[1]}-${originalInitialFilter[0]}`
-    const finalFilter = `${originalFinalFilter[2]}-${originalFinalFilter[1]}-${originalFinalFilter[0]}`
-    /* console.log(initialFilter); */
+    const originalInitialFilter = e.target.initialDate.value;
+    const originalFinalFilter = e.target.finalDate.value;
+/*     const initialFilter = `${originalInitialFilter[2]}-${originalInitialFilter[1]}-${originalInitialFilter[0]}`
+    const finalFilter = `${originalFinalFilter[2]}-${originalFinalFilter[1]}-${originalFinalFilter[0]}` */
+/*     console.log("inicial",originalInitialFilter);
+    console.log("final",originalFinalFilter); */
     /* console.log(arrayTareas); */
-    /* console.log(tasksArray.filter((item)=>{return(item.dateMade>=initialFilter && item.dateMade<=finalFilter)})); */
-    const filteredArray = tasksArray.filter((item)=>{return(item.dateMade>=initialFilter && item.dateMade<=finalFilter)})
+/*     console.log(tasksArray.filter((item)=>{return(item.dateMade>=initialFilter && item.dateMade<=finalFilter)})); */
+    const filteredArray = tasksArray.filter((item)=>{return(item.dateMade>=originalInitialFilter && item.dateMade<=originalFinalFilter)})
+/*     console.log(tasksArray);
+    console.log(filteredArray); */
     setFilterToArray(filteredArray)
     /* console.log(arrayFiltrado) */
     e.target.initialDate.value = "";
     e.target.finalDate.value = "";
-    console.log("filtrado",filterToArray)
+/*     console.log("filtrado",filterToArray) */
 }
   return (
     
