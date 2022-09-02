@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { UserAuth } from '../context/AuthContext'
 import GraphWithDateSelector from '../components/GraphWithDateSelector';
 import { AiOutlineBarChart,AiOutlineFileDone } from 'react-icons/ai'
+import TooltipP from "../components/TooltipP"
 
 import useDataUser from '../hooks/useDataUser'
 
@@ -41,9 +42,17 @@ const {tasksArray,userEmail,setTasksArray} =useDataUser(userData)
               <p>Welcome:</p>
             </div>
           </div>
-          <div className='flex text-4xl gap-2'>
+          <div className='flex text-xl gap-2'>
+            <TooltipP tooltipText="Registro">
+            <div className='text-4xl'>
             <Link to='/account'><AiOutlineFileDone/></Link>
+            </div>
+            </TooltipP>
+            <TooltipP tooltipText="Dashboard">
+            <div className='text-4xl'>
             <Link to='/dash'><AiOutlineBarChart/></Link>
+            </div>
+            </TooltipP>
           </div>
           <div>
             <button
