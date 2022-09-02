@@ -1,7 +1,6 @@
 import {useEffect,useState} from 'react'
 import { Link } from "react-router-dom";
 import { UserAuth } from '../context/AuthContext'
-import ChartJsExample from '../components/ChartJsExample';
 import GraphWithDateSelector from '../components/GraphWithDateSelector';
 
 import useDataUser from '../hooks/useDataUser'

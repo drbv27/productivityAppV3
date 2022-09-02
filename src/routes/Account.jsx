@@ -9,41 +9,6 @@ import useDataUser from '../hooks/useDataUser'
 const Account = () => {
 
   const [userData,setUserData] = useState([]);
-/*   const fakeData = [
-    {
-      id:1,
-      dateMade:"28-08-2022",
-      activitieStarted:"8:00",
-      activitieFinished:"9:00",
-      Macroprocess:"Gerencia",
-      Process:"Gobierno",
-      Subprocess:"Asamblea General",
-      description:"Acompañar asamblea",
-      activitieDuration:"1"
-    },
-    {
-      id:2,
-      dateMade:"28-08-2022",
-      activitieStarted:"9:00",
-      activitieFinished:"10:00",
-      Macroprocess:"Ingeniería",
-      Process:"Investigacion aplicada y desarrollo",
-      Subprocess:"Desarrollo de Software",
-      description:"Estados software productividad",
-      activitieDuration:"1"
-    },
-    {
-      id:3,
-      dateMade:"28-08-2022",
-      activitieStarted:"10:00",
-      activitieFinished:"11:30",
-      Macroprocess:"Gerencia",
-      Process:"Gobierno",
-      Subprocess:"Asamblea General",
-      description:"Acompañar asamblea",
-      activitieDuration:"1.5"
-    },
-  ] */
 
   const {user,logout} = UserAuth()
   /* console.log("usuario",user) */

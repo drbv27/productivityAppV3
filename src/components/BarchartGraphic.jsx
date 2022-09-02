@@ -165,7 +165,7 @@ import {
    console.log(userData) 
 
    return (
-      <div className="App">
+      <div>
         <Bar options={chartOptions} data={userData} />
       </div>
     );
