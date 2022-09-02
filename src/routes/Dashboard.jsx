@@ -2,6 +2,7 @@ import {useEffect,useState} from 'react'
 import { Link } from "react-router-dom";
 import { UserAuth } from '../context/AuthContext'
 import GraphWithDateSelector from '../components/GraphWithDateSelector';
+import { AiOutlineBarChart,AiOutlineFileDone } from 'react-icons/ai'
 
 import useDataUser from '../hooks/useDataUser'
 
@@ -40,9 +41,9 @@ const {tasksArray,userEmail,setTasksArray} =useDataUser(userData)
               <p>Welcome:</p>
             </div>
           </div>
-          <div>
-            <Link to='/account'>Registro</Link>
-            <Link to='/dash'>Dashboard</Link>
+          <div className='flex text-4xl gap-2'>
+            <Link to='/account'><AiOutlineFileDone/></Link>
+            <Link to='/dash'><AiOutlineBarChart/></Link>
           </div>
           <div>
             <button
@@ -56,9 +57,6 @@ const {tasksArray,userEmail,setTasksArray} =useDataUser(userData)
         {/*contenido*/ }
         <div>
           <GraphWithDateSelector tasksArray={tasksArray}/>
-          <h2>Probando</h2>
-         
-          <h2>Probando</h2>
         </div>
         
       </div>

@@ -24,7 +24,7 @@ import {
     let datos=[
         {
             macroproceso:"Gerencia",
-            cantidad:10,
+            cantidad:0,
         },
         {
             macroproceso:"Administrativo",
@@ -32,52 +32,23 @@ import {
         },
         {
             macroproceso:"Contable",
-            cantidad:5,
+            cantidad:0,
         }
     ]
     const [userData,setUserData] = useState({
         labels: datos.map((data)=>data.macroproceso),
         datasets:[{
-            label:"User Gained",
+            label:"Sin Datos",
             data:datos.map((data)=>data.cantidad),
 
         }],
     })
     let newData =[]
     /* console.log(tasksArray) */
-
-
-    const [chartData, setChartData] = useState({
-      datasets: [],
-    });
+    /* console.log(originalInitialFilter) */
    
     const [chartOptions, setChartOptions] = useState({});
-   
-    useEffect(() => {
-      setChartData({
-        labels: ["John", "Kevin", "Geroge", "Micheal", "Oreo"],
-        datasets: [
-          {
-            label: "Whom'st let the dogs out",
-            data: [12, 55, 34, 120, 720],
-            borderColor: "rgb(53, 162, 235)",
-            backgroundColor: "rgba(53, 162, 235, 0.4)",
-          },
-        ],
-      });
-      setChartOptions({
-        responsive: true,
-        plugins: {
-          legend: {
-            position: "top",
-          },
-          title: {
-            display: true,
-            text: "Whom'st let the dogs out",
-          },
-        },
-      });
-    }, []);
+
 
      useEffect(()=>{
         new Promise((resolve,reject)=>{
@@ -138,7 +109,7 @@ import {
             labels: response.map((data)=>data.macroproceso),
             datasets:[
                 {
-                label:"Horas Laboradas",
+                label:`Del ${tasksArray[0].dateMade} al ${tasksArray[tasksArray.length-1].dateMade}`,
                 data:response.map((data)=>data.cantidad),
                 backgroundColor:["rgba(16,151,213,0.4)","rgba(129,183,31,0.4)"],
                 borderColor:["#1097d5","#81b71f"],

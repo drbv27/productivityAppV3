@@ -116,7 +116,7 @@ async function addActivities(e){
   }, [running]);
   
   return (
-    <fieldset className='bg-secondary py-5 px-2 rounded-2xl'>
+    <fieldset className='bg-secondary py-5 px-2 rounded-2xl shadow-xl'>
       <legend className='text-3xl flex'>Actividad  <img src={Edi} alt="" className='ml-2 w-16'/></legend>
       <div className='text-right font-extrabold text-lg'>
           <h2>{dateStamp()}</h2>

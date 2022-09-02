@@ -5,6 +5,7 @@ import Edi from "../assets/img/EDI_RELAJADO.png"
 
 const GraphWithDateSelector = ({tasksArray}) => {
   const [filterToArray,setFilterToArray] = useState(null)
+ 
   /* console.log("arrayyy",tasksArray); */
 
   async function activitiesFilter(e){
@@ -21,11 +22,13 @@ const GraphWithDateSelector = ({tasksArray}) => {
 /*     console.log(tasksArray);
     console.log(filteredArray); */
     setFilterToArray(filteredArray)
+    
     /* console.log(arrayFiltrado) */
     e.target.initialDate.value = "";
     e.target.finalDate.value = "";
 /*     console.log("filtrado",filterToArray) */
 }
+
   return (
     
     <fieldset className='bg-secondary py-5 px-2 rounded-2xl shadow-2xl'>
@@ -42,11 +45,11 @@ const GraphWithDateSelector = ({tasksArray}) => {
         <input type="date" name="finalDate" id="finalDate" className='p-1 rounded shadow font-semibold'/>
       </div>
       <div>
-        <button>Filtrar</button>
+        <button className='bg-button p-2 mt-4 rounded-xl font-semibold text-btnText'>Filtrar</button>
       </div>
     </form>
     <div className="bg-primary mx-2 rounded">
-      <BarChartGraphic tasksArray={filterToArray}/>
+      <BarChartGraphic tasksArray={filterToArray} />
     </div>
     </fieldset>
   )
