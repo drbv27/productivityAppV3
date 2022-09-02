@@ -44,7 +44,7 @@ import {
         }],
     })
     let newData =[]
-    console.log(tasksArray)
+    /* console.log(tasksArray) */
 
 
     const [chartData, setChartData] = useState({
@@ -162,7 +162,7 @@ import {
     })
     },[tasksArray]) 
    /* console.log(tasksArray.filter((item)=>{return(item.Macroprocess==="Gerencia")})); */
-   console.log(userData) 
+   /* console.log(userData)  */
 
    return (
       <div>
