@@ -31,7 +31,7 @@ const GraphWithDateSelector = ({tasksArray}) => {
 
   return (
     <>
-    <fieldset className='bg-secondary py-5 px-2 rounded-2xl shadow-2xl'>
+    <fieldset className='bg-secondary py-5 px-2 rounded-t-2xl'>
     <legend className='text-3xl flex font-bold'>
       Distribución de Horas  <img src={Edi} alt="" className='ml-2 w-16'/>
     </legend>
@@ -49,7 +49,7 @@ const GraphWithDateSelector = ({tasksArray}) => {
       </div>
     </form>
     </fieldset>
-    <div className='bg-secondary py-5 px-2 rounded-2xl shadow-2xl'>
+    <div className='bg-secondary py-5 px-2 rounded-b-2xl shadow-2xl'>
       <div className="bg-primary mx-2 rounded">
         <BarChartGraphic tasksArray={filterToArray} />
       </div>
