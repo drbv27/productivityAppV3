@@ -109,7 +109,7 @@ import {
             labels: response.map((data)=>data.macroproceso),
             datasets:[
                 {
-                label:`Del ${tasksArray[0].dateMade} al ${tasksArray[tasksArray.length-1].dateMade}`,
+                label:`Horas laboradas`,
                 data:response.map((data)=>data.cantidad),
                 backgroundColor:["rgba(16,151,213,0.4)","rgba(129,183,31,0.4)"],
                 borderColor:["#1097d5","#81b71f"],
@@ -126,7 +126,7 @@ import {
               },
               title: {
                 display: true,
-                text: "Horas laboradas en macroproceso",
+                text: `${tasksArray[0].dateMade} al ${tasksArray[tasksArray.length-1].dateMade}`,
               },
             },
           });

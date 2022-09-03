@@ -30,12 +30,12 @@ const GraphWithDateSelector = ({tasksArray}) => {
 }
 
   return (
-    
+    <>
     <fieldset className='bg-secondary py-5 px-2 rounded-2xl shadow-2xl'>
     <legend className='text-3xl flex font-bold'>
       Distribución de Horas  <img src={Edi} alt="" className='ml-2 w-16'/>
     </legend>
-    <form className=' flex justify-evenly gap-4 mb-3 mx-2' onSubmit={activitiesFilter}>
+    <form className=' md:flex justify-evenly gap-4 mb-3 mx-2' onSubmit={activitiesFilter}>
       <div className='flex flex-col flex-grow'>
         <label htmlFor="InitialDate" className='font-semibold'>Fecha Inicial</label>
         <input type="date" name="initalDate" id="initialDate" className='p-1 rounded shadow font-semibold'/>
@@ -48,10 +48,13 @@ const GraphWithDateSelector = ({tasksArray}) => {
         <button className='bg-button p-2 mt-4 rounded-xl font-semibold text-btnText'>Filtrar</button>
       </div>
     </form>
-    <div className="bg-primary mx-2 rounded">
-      <BarChartGraphic tasksArray={filterToArray} />
-    </div>
     </fieldset>
+    <div className='bg-secondary py-5 px-2 rounded-2xl shadow-2xl'>
+      <div className="bg-primary mx-2 rounded">
+        <BarChartGraphic tasksArray={filterToArray} />
+      </div>
+    </div>
+    </>
   )
 }
 
