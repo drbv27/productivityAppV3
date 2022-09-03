@@ -5,6 +5,7 @@ import { UserAuth } from '../context/AuthContext'
 import AddActivitie from '../components/AddActivitie'
 import ActivitiesList from '../components/ActivitiesList'
 import useDataUser from '../hooks/useDataUser'
+import TooltipP from "../components/TooltipP"
 import { AiOutlineBarChart,AiOutlineFileDone } from 'react-icons/ai'
 
 const Account = () => {
@@ -57,9 +58,17 @@ const Account = () => {
               <p>Welcome: {user && user.email}</p>
             </div>
           </div>
-          <div className='flex text-4xl gap-2'>
+          <div className='flex text-xl gap-2'>
+            <TooltipP tooltipText="Registro">
+            <div className='text-4xl'>
             <Link to='/account'><AiOutlineFileDone/></Link>
+            </div>
+            </TooltipP>
+            <TooltipP tooltipText="Dashboard">
+            <div className='text-4xl'>
             <Link to='/dash'><AiOutlineBarChart/></Link>
+            </div>
+            </TooltipP>
           </div>
           <div>
             <button

@@ -12,6 +12,17 @@ import useDataUser from '../hooks/useDataUser'
 const Dashboard = () => {
   const [userData,setUserData] = useState([]);
   const {user,logout} = UserAuth()
+
+  const handleLogout = async () => {
+    try {
+      await logout()
+      navigate('/')
+      console.log('You are logout');
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
+
   let newUser;
   useEffect(()=>{
     new Promise((resolve,reject)=>{
@@ -37,9 +48,9 @@ const {tasksArray,userEmail,setTasksArray} =useDataUser(userData)
     <div className='max-w-[1140px] mx-auto'>
         <div className='flex justify-between items-center my-1 py-4 rounded-div'>
           <div>
-            <h1 className='text-2xl font-bold'>Account</h1>
+            <h1 className='text-2xl font-bold'>Dash</h1>
             <div>
-              <p>Welcome:</p>
+              <p>Welcome: {user && user.email}</p>
             </div>
           </div>
           <div className='flex text-xl gap-2'>
@@ -56,7 +67,7 @@ const {tasksArray,userEmail,setTasksArray} =useDataUser(userData)
           </div>
           <div>
             <button
-             /*  onClick={handleLogout} */
+              onClick={handleLogout}
               className='border px-6 py-2 rounded-2xl shadow-lg hover:shadow-2xl'
             >
               Salir
@@ -64,7 +75,7 @@ const {tasksArray,userEmail,setTasksArray} =useDataUser(userData)
           </div>
         </div>
         {/*contenido*/ }
-        <div>
+        <div className='mt-10'>
           <GraphWithDateSelector tasksArray={tasksArray}/>
         </div>
         
