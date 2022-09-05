@@ -12,6 +12,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import { AuthContextProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import PruebaUsers from './routes/PruebaUsers';
 
 function App() {
 
@@ -31,6 +32,11 @@ function App() {
           <Route path='/dash' element={
             <ProtectedRoute>
               <Dashboard />
+            </ProtectedRoute>
+          } />
+          <Route path='/usersP' element={
+            <ProtectedRoute>
+              <PruebaUsers />
             </ProtectedRoute>
           } />
         </Routes>

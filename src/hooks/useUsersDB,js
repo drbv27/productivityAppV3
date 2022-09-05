@@ -1,31 +1,42 @@
 import { useState,useEffect} from "react";
 
 import app from "../firebase";
-import { collection,query,where,getFirestore,doc,getDocs,setDoc } from "firebase/firestore";
+import {
+    collection,
+    getFirestore,
+    getDocs,
+    deleteDoc,
+    doc,
+    onSnapshot,
+    query,where,
+  } from "firebase/firestore";
+
 
 const firestore = getFirestore(app);
 
-const useUsersDB = ()=>{
-    const [tasksArray,setTasksArray] = useState(null);
+const useDBUser = ()=>{
+    const [data, setData] = useState([]);
+  
 
-    
 
-    const userEmail = user.email;
+        const q = query(collection(firestore, "userDetails"), where("email", "==", true));
+        
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          console.log(doc.id, " => ", doc.data());
+        });
+
+
     /* console.log("correo usuario",correoUsuario) */
     /* console.log(usuario.email); */
-  // Create a reference to the cities collection
-const usersRef = collection(firestore, "usersActivities");
 
-// Create a query against the collection.
-const q = query(usersRef, where("id", "==", true));
 
-const querySnapshot = await getDocs(q);
-querySnapshot.forEach((doc) => {
-  // doc.data() is never undefined for query doc snapshots
-  console.log(doc.id, " => ", doc.data());
-});
-    
-  
+
+    return (
+        <div>prueba</div>
+    )
+
 }
 
-export default useUsersDB;
+export default useDBUser;
