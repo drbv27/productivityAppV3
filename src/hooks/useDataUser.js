@@ -7,6 +7,8 @@ const firestore = getFirestore(app);
 
 const useDataUser = (user)=>{
     const [tasksArray,setTasksArray] = useState(null);
+  
+  
 
     const userEmail = user.email;
     /* console.log("correo usuario",correoUsuario) */
@@ -65,14 +67,20 @@ const useDataUser = (user)=>{
         return infoDocu.activities;
       }
     }
+
+ 
   
     useEffect(()=>{
       async function fetchTasks(){
         const queriedTasks= await searchDocOrCreateDoc(userEmail);
+        
         setTasksArray(queriedTasks);
+       
       }
       fetchTasks();
       },[userEmail]);
+
+
     return {
         tasksArray,userEmail,setTasksArray
     }
