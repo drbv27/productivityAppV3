@@ -44,7 +44,7 @@ const Dashboard = () => {
 
 const {tasksArray,userEmail,setTasksArray} =useDataUser(userData)
 
-/* console.log("desde dash",tasksArray) */
+console.log("desde dash",tasksArray)
   return (
     <>
     <div className='max-w-[1140px] mx-auto'>

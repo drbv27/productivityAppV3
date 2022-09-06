@@ -39,7 +39,7 @@ const Account = () => {
 
   const {tasksArray,userEmail,setTasksArray} =useDataUser(userData)
   /* const {userDetails,setUserDetails} =useUsersDB(userData) */
-  /* console.log("desde account",tasksArray); */
+  console.log("desde account",tasksArray);
   /* console.log("desde accountDB",usersDB); */
   const navigate = useNavigate()
 

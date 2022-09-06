@@ -16,7 +16,7 @@ const useDataUser = (user)=>{
     const fakeData = [
         {
           id:1,
-          dateMade:"28-08-2022",
+          dateMade:"2022-08-28",
           activitieStarted:"8:00",
           activitieFinished:"9:00",
           Macroprocess:"Gerencia",
@@ -27,7 +27,7 @@ const useDataUser = (user)=>{
         },
         {
           id:2,
-          dateMade:"28-08-2022",
+          dateMade:"2022-08-28",
           activitieStarted:"9:00",
           activitieFinished:"10:00",
           Macroprocess:"Ingeniería",
@@ -38,7 +38,7 @@ const useDataUser = (user)=>{
         },
         {
           id:3,
-          dateMade:"28-08-2022",
+          dateMade:"2022-08-28",
           activitieStarted:"10:00",
           activitieFinished:"11:30",
           Macroprocess:"Gerencia",
@@ -59,13 +59,13 @@ const useDataUser = (user)=>{
         //si si existe
         const infoDoc = query.data();
         return infoDoc.activities;
-      }else{
+      }/* else{
         //si no existe
         await setDoc(docuRef,{activities:[...fakeData]});
         const query = await getDoc(docuRef);
         const infoDocu = query.data();
         return infoDocu.activities;
-      }
+      } */
     }
 
  
@@ -80,6 +80,8 @@ const useDataUser = (user)=>{
       fetchTasks();
       },[userEmail]);
 
+      /* console.log("correo",userEmail); */
+      console.log("arreglo",tasksArray);
 
     return {
         tasksArray,userEmail,setTasksArray

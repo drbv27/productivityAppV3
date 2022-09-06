@@ -126,7 +126,8 @@ import {
               },
               title: {
                 display: true,
-                text: `${tasksArray[0].dateMade} al ${tasksArray[tasksArray.length-1].dateMade}`,
+                /* text: `${tasksArray[0].dateMade} al ${tasksArray[tasksArray.length-1].dateMade}`, */
+                text: `GRAFICO`,
               },
             },
           });

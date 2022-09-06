@@ -48,8 +48,8 @@ const PruebaUsers =  ()=>{
         <div>{usuariosD.map((usuario)=>{
             return(
                 <div>
-                    <p key={usuario.details.email}>{usuario.details.name}</p>
-                    <p key={usuario.details.email+1}>{usuario.details.lastname}</p>
+                    <p key={usuario.details.email}>{usuario.details.name} {usuario.details.lastname} {usuario.details.workArea}</p>
+
                 </div>
             )
  
