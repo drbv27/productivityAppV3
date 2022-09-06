@@ -6,6 +6,7 @@ import { AiOutlineBarChart,AiOutlineFileDone } from 'react-icons/ai'
 import TooltipP from "../components/TooltipP"
 
 import useDataUser from '../hooks/useDataUser'
+import Navbar from '../components/Navbar';
 
 
 
@@ -45,14 +46,16 @@ const {tasksArray,userEmail,setTasksArray} =useDataUser(userData)
 
 /* console.log("desde dash",tasksArray) */
   return (
+    <>
     <div className='max-w-[1140px] mx-auto'>
-
+      <Navbar/>
         {/*contenido*/ }
         <div className='mt-10'>
           <GraphWithDateSelector tasksArray={tasksArray}/>
         </div>
         
       </div>
+      </>
   )
 }
 

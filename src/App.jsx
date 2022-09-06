@@ -19,7 +19,7 @@ function App() {
   return (
     <ThemeProvider>
       <AuthContextProvider>
-        <Navbar/>
+        {/* <Navbar/> */}
         <Routes>
           <Route path='/' element={<SignIn />} />
           <Route path='/signup' element={<SignUp />} />

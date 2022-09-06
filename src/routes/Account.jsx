@@ -5,8 +5,10 @@ import { UserAuth } from '../context/AuthContext'
 import AddActivitie from '../components/AddActivitie'
 import ActivitiesList from '../components/ActivitiesList'
 import useDataUser from '../hooks/useDataUser'
+
 import TooltipP from "../components/TooltipP"
 import { AiOutlineBarChart,AiOutlineFileDone } from 'react-icons/ai'
+import Navbar from '../components/Navbar';
 
 const Account = () => {
 
@@ -36,6 +38,7 @@ const Account = () => {
 
 
   const {tasksArray,userEmail,setTasksArray} =useDataUser(userData)
+  /* const {userDetails,setUserDetails} =useUsersDB(userData) */
   /* console.log("desde account",tasksArray); */
   /* console.log("desde accountDB",usersDB); */
   const navigate = useNavigate()
@@ -50,7 +53,10 @@ const Account = () => {
     }
   }
 
+ /*  console.log(userDetails); */
   return (
+    <>
+    <Navbar/>
     <div className='max-w-[1140px] mx-auto'>
 
         {/* Form activiteies */}
@@ -80,6 +86,7 @@ const Account = () => {
           </div>
         </div>
       </div>
+      </>
   )
 }
 

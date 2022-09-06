@@ -1,22 +1,34 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import {Link} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import ThemeToggle from './ThemeToggle'
 import {AiOutlineClose, AiOutlineMenu} from 'react-icons/ai'
 import PygmaLogo from "../assets/img/Logo-Pygmalion.png"
 import { UserAuth } from '../context/AuthContext'
+import useUsersDB from '../hooks/useUsersDB,js'
 import TooltipP from "../components/TooltipP"
-import { AiOutlineBarChart,AiOutlineFileDone } from 'react-icons/ai'
+import { AiOutlineBarChart,AiOutlineFileDone,AiOutlineTeam } from 'react-icons/ai'
+import app from "../firebase";
+import { getFirestore,doc,getDoc,setDoc } from "firebase/firestore";
+const firestore = getFirestore(app);
 
-import useDataUser from '../hooks/useDataUser'
+
 
 
 const Navbar = () => {
+    
+
     const [nav,setNav] = useState(false)
+
     const {user,logout} = UserAuth()
+
+    const navigate = useNavigate()
 
     const handleNav = ()=>{
         setNav(!nav)
     }
+
+
 
 const handleLogout = async () => {
     try {
@@ -28,7 +40,11 @@ const handleLogout = async () => {
         }
       }
 
-    /* console.log(user) */
+
+ const {userDetails,setuserDetails} = useUsersDB(user)
+
+/* const {userDetails,setUserDetails} =useUsersDB(user) */
+console.log(userDetails)
   return (
     <div className='rounded-div flex items-center justify-between h-20 font-bold bg-appblue mt-1'>
         <Link to="/">
@@ -66,11 +82,19 @@ const handleLogout = async () => {
                         <ThemeToggle/>
                     </div>
                     </TooltipP>
+                     {userDetails && userDetails.isAdmin
+                    ?                    <TooltipP tooltipText="Usuarios">
+                    <div className='text-4xl'>
+                        <Link to='/dash'><AiOutlineTeam/></Link>
+                    </div>
+                    </TooltipP>
+                    :null
+                    } 
 
                 </div>
                 <div className='flex flex-col items-center gap-2'>
                     <div>
-                        <p>Welcome: {user && user.email}</p>              
+                        <p>Welcome:   {userDetails.name && userDetails.name}  </p>              
                     </div>
                     <div>
                         <button
