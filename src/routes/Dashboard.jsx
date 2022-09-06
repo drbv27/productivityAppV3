@@ -24,7 +24,7 @@ const Dashboard = () => {
     }
   }
 
-  let newUser;
+/*   let newUser;
   useEffect(()=>{
     new Promise((resolve,reject)=>{
         if(user){
@@ -40,9 +40,9 @@ const Dashboard = () => {
       
       
     })
-  },[user])
+  },[user]) */
 
-const {tasksArray,userEmail,setTasksArray} =useDataUser(userData)
+const {tasksArray,userEmail,setTasksArray} =useDataUser(user)
 
 console.log("desde dash",tasksArray)
   return (

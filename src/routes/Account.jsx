@@ -17,7 +17,7 @@ const Account = () => {
   const {user,logout} = UserAuth()
   /* console.log("usuario",user) */
 
-  let newUser;
+/*   let newUser;
   useEffect(()=>{
     new Promise((resolve,reject)=>{
         if(user){
@@ -28,18 +28,19 @@ const Account = () => {
             reject("no se pudo dash")
         }
     }).then((response)=>{
-
+      console.log("respuesta",response);
       setUserData(response)
       
       
     })
-  },[user])
+  },[user]) */
 
 
 
-  const {tasksArray,userEmail,setTasksArray} =useDataUser(userData)
+  const {tasksArray,userEmail,setTasksArray} =useDataUser(user)
   /* const {userDetails,setUserDetails} =useUsersDB(userData) */
   console.log("desde account",tasksArray);
+  console.log("user account",user);
   /* console.log("desde accountDB",usersDB); */
   const navigate = useNavigate()
 
