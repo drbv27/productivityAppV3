@@ -10,6 +10,7 @@ import {
     onSnapshot,
     query,where,
   } from "firebase/firestore";
+import Navbar from "../components/Navbar";
 
 
 const firestore = getFirestore(app);
@@ -22,7 +23,7 @@ const PruebaUsers =  ()=>{
       const fetchData = async () => {
         let list = [];
         try{
-            const querySnapshot =  await getDocs(collection(firestore, "userDetails"));
+            const querySnapshot =  await getDocs(collection(firestore, "usersActivities"));
             querySnapshot.forEach((doc) => {
              list.push(doc.data())})
              setUsuariosD(list)
@@ -41,15 +42,19 @@ const PruebaUsers =  ()=>{
     console.log("USUARIOS",usuariosD)
 
     return (
+        <>
+        <Navbar/>
+        <h2>Prueba</h2>
         <div>{usuariosD.map((usuario)=>{
             return(
                 <div>
-                    <p key={usuario.email}>{usuario.name}</p>
-                    <p key={usuario.email+1}>{usuario.isAdmin}</p>
+                    <p key={usuario.details.email}>{usuario.details.name}</p>
+                    <p key={usuario.details.email+1}>{usuario.details.lastname}</p>
                 </div>
             )
  
         })}</div>
+        </>
     )
 
 }

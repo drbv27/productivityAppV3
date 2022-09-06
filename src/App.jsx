@@ -12,6 +12,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import { AuthContextProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import AdminProtected from './components/AdminProtected';
 import PruebaUsers from './routes/PruebaUsers';
 
 function App() {
@@ -35,9 +36,9 @@ function App() {
             </ProtectedRoute>
           } />
           <Route path='/usersP' element={
-            <ProtectedRoute>
+            <AdminProtected>
               <PruebaUsers />
-            </ProtectedRoute>
+            </AdminProtected>
           } />
         </Routes>
         <Footer/>

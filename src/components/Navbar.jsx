@@ -44,7 +44,7 @@ const handleLogout = async () => {
  const {userDetails,setuserDetails} = useUsersDB(user)
 
 /* const {userDetails,setUserDetails} =useUsersDB(user) */
-console.log(userDetails)
+/* console.log(userDetails) */
   return (
     <div className='rounded-div flex items-center justify-between h-20 font-bold bg-appblue mt-1'>
         <Link to="/">
@@ -77,24 +77,25 @@ console.log(userDetails)
                         <Link to='/dash'><AiOutlineBarChart/></Link>
                     </div>
                     </TooltipP>
+                    {userDetails && userDetails.isAdmin
+                    ?                    <TooltipP tooltipText="Usuarios">
+                    <div className='text-4xl'>
+                        <Link to='/usersP'><AiOutlineTeam/></Link>
+                    </div>
+                    </TooltipP>
+                    :null
+                    } 
                     <TooltipP tooltipText="Theme">
                     <div className='text-xl'>
                         <ThemeToggle/>
                     </div>
                     </TooltipP>
-                     {userDetails && userDetails.isAdmin
-                    ?                    <TooltipP tooltipText="Usuarios">
-                    <div className='text-4xl'>
-                        <Link to='/dash'><AiOutlineTeam/></Link>
-                    </div>
-                    </TooltipP>
-                    :null
-                    } 
+
 
                 </div>
                 <div className='flex flex-col items-center gap-2'>
                     <div>
-                        <p>Welcome:   {userDetails.name && userDetails.name}  </p>              
+                        <p>Welcome:   {userDetails && userDetails.name}   </p>              
                     </div>
                     <div>
                         <button
