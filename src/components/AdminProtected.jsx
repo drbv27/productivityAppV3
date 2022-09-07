@@ -7,8 +7,8 @@ const AdminProtected = ({children}) => {
     const [ingreso,setIngreso] = useState(false)
     const {user} = UserAuth()
     const {userDetails,setuserDetails} = useUsersDB(user)
-    console.log("protegido",userDetails);
-    console.log("detalle",userDetails.isAdmin);
+ /*    console.log("protegido",userDetails);
+    console.log("detalle",userDetails.isAdmin); */
 
 /*     if (userDetails && !!userDetails.isAdmin){
         return<Navigate to='/' />

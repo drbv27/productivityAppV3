@@ -14,6 +14,7 @@ import { AuthContextProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import AdminProtected from './components/AdminProtected';
 import PruebaUsers from './routes/PruebaUsers';
+import UsersPanel from './routes/UsersPanel';
 
 function App() {
 
@@ -37,7 +38,7 @@ function App() {
           } />
           <Route path='/usersP' element={
             <AdminProtected>
-              <PruebaUsers />
+              <UsersPanel/>
             </AdminProtected>
           } />
         </Routes>
