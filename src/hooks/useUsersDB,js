@@ -27,7 +27,7 @@ const useUsersDB = (user)=>{
         return infoDoc.details;
       }else{
         //si no existe
-        await setDoc(docuRef,{activities:[...fakeData]});
+       /*  await setDoc(docuRef,{activities:[...fakeData]}); */
         const query = await getDoc(docuRef);
         const infoDocu = query.data();
         return infoDocu.details;

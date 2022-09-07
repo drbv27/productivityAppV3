@@ -77,7 +77,7 @@ const handleLogout = async () => {
                         <Link to='/dash'><AiOutlineBarChart/></Link>
                     </div>
                     </TooltipP>
-                    {userDetails && userDetails.isAdmin
+                    {userDetails && !userDetails.isAdmin
                     ?                    <TooltipP tooltipText="Usuarios">
                     <div className='text-4xl'>
                         <Link to='/usersP'><AiOutlineTeam/></Link>

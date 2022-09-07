@@ -27,7 +27,7 @@ const PruebaUsers =  ()=>{
             querySnapshot.forEach((doc) => {
              list.push(doc.data())})
              setUsuariosD(list)
-             console.log(list)
+             /* console.log(list) */
         }catch (err){
             console.log(err);
         }
@@ -39,7 +39,7 @@ const PruebaUsers =  ()=>{
 
 
 
-    console.log("USUARIOS",usuariosD)
+    /* console.log("USUARIOS",usuariosD) */
 
     return (
         <>

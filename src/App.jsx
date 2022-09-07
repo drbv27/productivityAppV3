@@ -36,9 +36,9 @@ function App() {
             </ProtectedRoute>
           } />
           <Route path='/usersP' element={
-            <ProtectedRoute>
+            <AdminProtected>
               <PruebaUsers />
-            </ProtectedRoute>
+            </AdminProtected>
           } />
         </Routes>
         <Footer/>
