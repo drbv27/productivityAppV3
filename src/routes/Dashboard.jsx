@@ -7,6 +7,7 @@ import TooltipP from "../components/TooltipP"
 
 import useDataUser from '../hooks/useDataUser'
 import Navbar from '../components/Navbar';
+import ActivitiesTable from '../components/ActivitiesTable';
 
 
 
@@ -53,8 +54,9 @@ console.log("desde dash",tasksArray)
         <div className='mt-10'>
           <GraphWithDateSelector tasksArray={tasksArray}/>
         </div>
-        
+        <ActivitiesTable/>
       </div>
+
       </>
   )
 }

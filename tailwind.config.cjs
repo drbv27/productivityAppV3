@@ -18,6 +18,7 @@ module.exports = {
         primary: 'var(--color-text-primary)',
         secondary: 'var(--color-text-secondary)',
         btnText: 'var(--color-bg-primary)',
+        
       },
       borderColor: {
         primary: 'var(--color-bg-primary)',

@@ -10,6 +10,7 @@ import TooltipP from "../components/TooltipP"
 import { AiOutlineBarChart,AiOutlineFileDone } from 'react-icons/ai'
 import Navbar from '../components/Navbar';
 
+
 const Account = () => {
 
   const [userData,setUserData] = useState([]);
@@ -86,6 +87,7 @@ const Account = () => {
             
           </div>
         </div>
+
       </div>
       </>
   )
