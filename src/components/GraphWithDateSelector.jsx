@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import BarChartGraphic from './BarchartGraphic'
 import Edi from "../assets/img/EDI_RELAJADO.png"
+import ActivitiesTable from './ActivitiesTable'
 
 
 const GraphWithDateSelector = ({tasksArray}) => {
-  const [filterToArray,setFilterToArray] = useState(null)
+  const [filterToArray,setFilterToArray] = useState([])
  
   /* console.log("arrayyy",tasksArray); */
 
@@ -53,6 +54,7 @@ const GraphWithDateSelector = ({tasksArray}) => {
       <div className="bg-primary mx-2 rounded">
         <BarChartGraphic tasksArray={filterToArray} />
       </div>
+      <ActivitiesTable tasksArray={filterToArray}/>
     </div>
     </>
   )

@@ -54,7 +54,7 @@ console.log("desde dash",tasksArray)
         <div className='mt-10'>
           <GraphWithDateSelector tasksArray={tasksArray}/>
         </div>
-        <ActivitiesTable/>
+        
       </div>
 
       </>

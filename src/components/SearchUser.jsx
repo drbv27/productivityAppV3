@@ -66,7 +66,7 @@ const SearchUser = (usuariosD) => {
   return (
     <>
     <form onSubmit={userFilter} className='my-2 w-full relative'>
-    <div className='my-2 w-full relative rounded-2xl shadow-xl mb-4'>
+    <div className='my-2 w-full relative rounded-2xl shadow-xl mb-4 mx-2'>
     <input 
       list="usersF" 
       name="user" 
@@ -82,24 +82,23 @@ const SearchUser = (usuariosD) => {
       <BiSearchAlt className='absolute right-2 top-3 text-gray-400 text-2xl' />
   </div>
 
-  <div className='flex justify-between gap-2'>
-    <input type="date" name="initialFilterDate" id="initialFilterDate" className='grow'/>
-    <input type="date" name="finalFilterDate" id="finalFilterDate" className='grow'/>
-    <button>Consultar</button>
+  <div className='md:flex justify-between gap-2 mx-2'>
+    <input type="date" name="initialFilterDate" id="initialFilterDate" className='grow rounded-md'/>
+    <input type="date" name="finalFilterDate" id="finalFilterDate" className='grow rounded-md'/>
+    <button className='bg-button p-2 rounded-xl font-semibold text-btnText'>Consultar</button>
   </div>
   </form>
   <div className='w-full'>
-    <div className="flex flex-row justify-between gap-2">
-        <div className='bg-primary p-2 rounded'>
-            <h3>Nombre: {actualUser.name} {actualUser.lastname}</h3>
-            <h3>Area: {actualUser.workArea}</h3>
+    <div>
+        <div className='md:flex bg-primary p-2 rounded mb-2 justify-center gap-4 mx-2'>
+            <h3>Nombre: <span className='font-bold'>{actualUser.name} {actualUser.lastname}</span></h3>
+            <h3>Area: <span className='font-bold'>{actualUser.workArea}</span></h3>
         </div>
-        <div className="bg-primary mx-2 rounded grow">
-            {/* <GraphWithDateSelector tasksArray={actualActivities}/> */}
-            <BarChartGraphic tasksArray={actualActivities} />
+         <div className="bg-primary mx-2 rounded grow">
+            <BarChartGraphic tasksArray={actualActivities} className="rounded-xl"/>
         </div>
     </div>
-        <ActivitiesTable/>
+        <ActivitiesTable tasksArray={actualActivities}/>
   </div>
 
   </>
