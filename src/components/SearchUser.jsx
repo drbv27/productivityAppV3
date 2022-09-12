@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import {BiPlayCircle,BiStopCircle,BiUpload,BiSearchAlt,BiPencil} from 'react-icons/bi'
 import ActivitiesTable from './ActivitiesTable'
 import BarChartGraphic from './BarchartGraphic'
+import GraphWithDateSelector from './GraphWithDateSelector'
 
 const SearchUser = (usuariosD) => {
     const [actualUser,setActualUser] = useState({
@@ -10,6 +11,7 @@ const SearchUser = (usuariosD) => {
         workArea:""
     })
     const [actualActivities,setActualActivities] = useState([])
+    const [filterToArray,setFilterToArray] = useState(null)
     const users = usuariosD.usuariosD
     console.log("usuarios",users)
 
@@ -24,14 +26,43 @@ const SearchUser = (usuariosD) => {
             lastname:userFiltered[0].details.lastname,
             workArea:userFiltered[0].details.workArea
         }
+
         const userActivities = userFiltered[0].activities
+        const filteredArray = userActivities.filter((item)=>{return(item.dateMade>=initialFilterDate && item.dateMade<=finalFilterDate)})
+
         setActualUser(userInfo)
-        setActualActivities(userActivities)
+        setActualActivities(filteredArray)
         console.log("detalles",userFiltered);
         console.log(userInfo);
         console.log(actualActivities)
         
     }
+
+    
+ 
+    /* console.log("arrayyy",tasksArray); */
+  
+    async function activitiesFilter(e){
+      e.preventDefault();
+      const originalInitialFilter = e.target.initialDate.value;
+      const originalFinalFilter = e.target.finalDate.value;
+  /*     const initialFilter = `${originalInitialFilter[2]}-${originalInitialFilter[1]}-${originalInitialFilter[0]}`
+      const finalFilter = `${originalFinalFilter[2]}-${originalFinalFilter[1]}-${originalFinalFilter[0]}` */
+  /*     console.log("inicial",originalInitialFilter);
+      console.log("final",originalFinalFilter); */
+      /* console.log(arrayTareas); */
+  /*     console.log(tasksArray.filter((item)=>{return(item.dateMade>=initialFilter && item.dateMade<=finalFilter)})); */
+      const filteredArray = tasksArray.filter((item)=>{return(item.dateMade>=originalInitialFilter && item.dateMade<=originalFinalFilter)})
+  /*     console.log(tasksArray);
+      console.log(filteredArray); */
+      setFilterToArray(filteredArray)
+      
+      /* console.log(arrayFiltrado) */
+      e.target.initialDate.value = "";
+      e.target.finalDate.value = "";
+  /*     console.log("filtrado",filterToArray) */
+  }
+
   return (
     <>
     <form onSubmit={userFilter} className='my-2 w-full relative'>
@@ -64,6 +95,7 @@ const SearchUser = (usuariosD) => {
             <h3>Area: {actualUser.workArea}</h3>
         </div>
         <div className="bg-primary mx-2 rounded grow">
+            {/* <GraphWithDateSelector tasksArray={actualActivities}/> */}
             <BarChartGraphic tasksArray={actualActivities} />
         </div>
     </div>
