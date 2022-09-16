@@ -65,7 +65,7 @@ const SearchUser = (usuariosD) => {
 
   return (
     <>
-    <form onSubmit={userFilter} className='my-2 w-full relative flex'>
+    <form onSubmit={userFilter} className='my-2 w-full relative md:flex'>
     <div className='my-2 w-full relative rounded-2xl shadow-xl mx-2'>
     <input 
       list="usersF" 
