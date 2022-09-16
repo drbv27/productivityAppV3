@@ -141,12 +141,11 @@ const handleLogout = async () => {
                 </li>
             </ul>
             <div className='flex flex-col w-full p-4 '>
-                <Link to='/signin'>
-                    <button className='w-full my-2 p-3 bg-primary text-primary border border-secondary rounded-2xl shadow-xl'>Ingresar</button>
-                </Link>
-                <Link to='/signup'>
-                    <button className='w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl'>Registrarse</button>
-                </Link>
+                <button
+                    onClick={handleLogout}
+                    className='border px-6 py-1 rounded-2xl shadow-lg hover:shadow-2xl bg-button text-white'
+                    >Salir
+                </button>
             </div>
         </div>
         
