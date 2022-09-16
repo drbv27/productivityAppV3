@@ -124,11 +124,18 @@ const handleLogout = async () => {
         >
             <ul className='w-full p-4 '>
                 <li className='border-b py-6'>
-                    <Link to='/'>Home</Link>
+                    <Link to='/account'>Registro</Link>
                 </li>
                 <li className='border-b py-6'>
-                    <Link to='/'>Account</Link>
+                    <Link to='/dash'>DashBoard</Link>
                 </li>
+                {userDetails && !userDetails.isAdmin
+                    ?
+                    <li className='border-b py-6'>
+                        <Link to='/usersP'>Usuarios</Link>
+                    </li>
+                    :null
+                } 
                 <li className='py-6'>
                     <ThemeToggle/>
                 </li>

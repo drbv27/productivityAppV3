@@ -27,6 +27,7 @@ const ActivitiesTable = ({tasksArray}) => {
             <td className='border p-2'>{activitie.activitieDuration}</td>
 
             </tr>
+            
       ))}
             
         </tbody>

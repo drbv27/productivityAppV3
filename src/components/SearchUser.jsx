@@ -65,13 +65,13 @@ const SearchUser = (usuariosD) => {
 
   return (
     <>
-    <form onSubmit={userFilter} className='my-2 w-full relative'>
-    <div className='my-2 w-full relative rounded-2xl shadow-xl mb-4 mx-2'>
+    <form onSubmit={userFilter} className='my-2 w-full relative flex'>
+    <div className='my-2 w-full relative rounded-2xl shadow-xl mx-2'>
     <input 
       list="usersF" 
       name="user" 
       id="formUsers" 
-      className='w-full p-2 bg-primary border border-input rounded-2xl' 
+      className='w-full p-2 bg-primary border border-input rounded-md' 
       placeholder='Buscar Usuario' 
     />
     <datalist id="usersF">
@@ -82,9 +82,9 @@ const SearchUser = (usuariosD) => {
       <BiSearchAlt className='absolute right-2 top-3 text-gray-400 text-2xl' />
   </div>
 
-  <div className='md:flex justify-between gap-2 mx-2'>
-    <input type="date" name="initialFilterDate" id="initialFilterDate" className='grow rounded-md'/>
-    <input type="date" name="finalFilterDate" id="finalFilterDate" className='grow rounded-md'/>
+  <div className='md:flex justify-between items-center gap-2 mx-2'>
+    <input type="date" name="initialFilterDate" id="initialFilterDate" className='grow rounded-md px-4 py-2'/>
+    <input type="date" name="finalFilterDate" id="finalFilterDate" className='grow rounded-md px-4 py-2'/>
     <button className='bg-button p-2 rounded-xl font-semibold text-btnText'>Consultar</button>
   </div>
   </form>
