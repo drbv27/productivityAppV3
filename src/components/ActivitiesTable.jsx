@@ -19,7 +19,7 @@ const ActivitiesTable = ({tasksArray}) => {
         <tbody className=' text-center bg-primary flex-1 sm:flex-none'>
             {tasksArray.map((activitie,index) => (
             <tr key={index} className="border-t first:border-t-0 flex p-1 md:p-3 hover:bg-gray-100 md:table-row flex-col w-full flex-wrap">
-              <td className='border p-2'>
+              <td className='border p-2 text-left'>
                 <label htmlFor="" className='bg-third text-white text-xs uppercase font-semibold md:hidden px-2'>fecha</label>
                 <p className='text-sm'>
                 {activitie.dateMade}
