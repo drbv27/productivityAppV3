@@ -1,5 +1,5 @@
 import React from 'react'
-import {AiOutlineInstagram} from 'react-icons/ai'
+import {AiOutlineInstagram,AiOutlineMail,AiOutlineGithub} from 'react-icons/ai'
 import {FaFacebookF,FaYoutube} from 'react-icons/fa'
 import ThemeToggle from './ThemeToggle'
 
@@ -42,14 +42,23 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className='flex justify-between gap-20'>
-            <div className='grow flex py-4 justify-between text-accent'>
+          <div className='md:flex justify-between mb-3'>
+            <div className='grow md:flex justify-start gap-3'>
               <p>Siguenos: </p>
-              <AiOutlineInstagram />
-              <FaYoutube/>
-              <FaFacebookF />
+              <p className='flex justify-left md:justify-between gap-3'>
+                <a href="https://www.instagram.com/pygmaliontech/" target="_blank" ><AiOutlineInstagram className='mt-2'/></a>
+                <a href="https://www.youtube.com/PygmalionTech" target="_blank"><FaYoutube className='mt-2'/></a>
+                <a href="https://www.facebook.com/PygmalionTech" target="_blank"><FaFacebookF className='mt-2'/></a>
+              </p>
             </div>
-            <p className='grow text-right py-4'>Develop by drbv27 2022</p>
+            <hr className='my-2'/>
+            <div className='grow md:flex justify-end gap-3'>
+              <p>Develop by drbv27 &copy;2022</p>
+              <p className='flex justify-left md:justify-between gap-3'>
+                <a href="mailto:drbv27@gmail.com" target="_blank" ><AiOutlineMail className='mt-2'/></a>
+                <a href="https://github.com/drbv27" target="_blank" ><AiOutlineGithub className='mt-2'/></a>
+              </p>
+            </div>
           </div>
         </div>
   )

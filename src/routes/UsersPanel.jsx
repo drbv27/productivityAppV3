@@ -46,7 +46,7 @@ const UsersPanel =  ()=>{
     return (
         <>
         <Navbar/>
-        <fieldset className='bg-secondary py-5 px-2 rounded-2xl shadow-xl mx-16 mt-10'>
+        <fieldset className='bg-secondary py-5 px-2 rounded-2xl shadow-xl mx-4 mt-10'>
         <legend className='text-3xl flex'>Usuarios  <img src={Edi} alt="" className='ml-2 w-16'/></legend>
             <div className='bg-secondary flex flex-col justfiy-between items-center my-5 py-2 px-4 rounded-xl'>
                 <SearchUser usuariosD={usuariosD}/>

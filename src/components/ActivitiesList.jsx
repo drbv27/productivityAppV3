@@ -43,12 +43,12 @@ const ActivitiesList = ({activitiesArray,userEmail,setTasksArray}) => {
             return(
                 <div className='flex justify-between border px-6 py-2 mt-4 rounded-2xl shadow-lg hover:shadow-2xl' key={activitieObject.id}>
                     <div>
-                        <h2 className='text-3xl'>{activitieObject.description}</h2>
+                        <h2 className='text-2xl md:text-3xl'>{activitieObject.description}</h2>
                         <p><span className='font-bold'>Macroproceso:</span> {activitieObject.Macroprocess}</p>
                         <p><span className='font-bold'>Proceso:</span>{activitieObject.Process}</p>
                         <p><span className='font-bold'>Subproceso:</span>{activitieObject.Subprocess}</p>
                         <br/>
-                        <div className='flex gap-5'>
+                        <div className='text-sm md:text-base flex gap-5'>
                             <p><span className='font-bold'>Iniciada:</span>{activitieObject.activitieStarted}</p>
                             <p><span className='font-bold'>Finalizada:</span>{activitieObject.activitieFinished}</p>
                             <p><span className='font-bold'>Duración:</span>{activitieObject.activitieDuration}</p>
@@ -62,7 +62,8 @@ const ActivitiesList = ({activitiesArray,userEmail,setTasksArray}) => {
                             text-2xl 
                             text-btnText 
                             mt-5 
-                            pl-7
+                            pl-4
+                            md:pl-7
                             border 
                             rounded-xl 
                             bg-yellowP 
@@ -75,7 +76,8 @@ const ActivitiesList = ({activitiesArray,userEmail,setTasksArray}) => {
                             text-2xl 
                             text-btnText 
                             mt-5 
-                            pl-7
+                            pl-4
+                            md:pl-7
                             border 
                             rounded-xl 
                             bg-redP 
