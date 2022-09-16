@@ -15,6 +15,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import AdminProtected from './components/AdminProtected';
 import PruebaUsers from './routes/PruebaUsers';
 import UsersPanel from './routes/UsersPanel';
+import NotFound from './routes/NotFound';
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
               <UsersPanel/>
             </AdminProtected>
           } />
+          <Route path='*' element={<NotFound/>}/>
         </Routes>
         <Footer/>
       </AuthContextProvider>
