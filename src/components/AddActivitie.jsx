@@ -38,6 +38,14 @@ const AddActivitie = ({activitiesArray,userEmail,setTasksArray}) => {
     return dateToShow;
   };
 
+  const currentWeek = () => {
+    let currentDate = new Date();
+    let januaryOne = new Date(currentDate.getFullYear(),0,1);
+    let numberOfDays = Math.floor((currentDate-januaryOne)/(24*60*60*1000))+1
+    let week = Math.ceil(numberOfDays/7)
+    return week
+  }
+
   const captureTimeActivitieStart = () => {
     const startActivitie = new Date();
     const startHour = startActivitie.getHours();
@@ -119,6 +127,7 @@ async function addActivities(e){
     <fieldset className='bg-secondary py-5 px-2 rounded-2xl shadow-xl'>
       <legend className='text-3xl flex'>Actividad  <img src={Edi} alt="" className='ml-2 w-16'/></legend>
       <div className='text-right font-extrabold text-lg'>
+          <h2>Semana {currentWeek()}</h2>
           <h2>{dateStamp()}</h2>
       </div>
       <div className='flex flex-row-reverse justify-between gap-5'>
